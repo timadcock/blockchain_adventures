@@ -1,12 +1,19 @@
-public class Link {
-    private Link previous;
-    private Link next;
+import java.math.BigInteger;
 
-    private Block data;
+public class Link {
+    private final Link previous;
+    private       Link next;
+
+    private final Block data;
 
     public Link(Block data, Link previous) {
         this.previous = previous;
         this.data     = data;
+    }
+
+    public void mine(int difficulty) {
+        this.data.provideProof(difficulty);
+
     }
 
     public Link getNext() {
@@ -15,6 +22,14 @@ public class Link {
 
     public void setNext(Link next) {
         this.next = next;
+    }
+
+    public BigInteger getHash() {
+        return data.getHash();
+    }
+
+    public BigInteger getPrevHash() {
+        return data.getPrevHash();
     }
 
     @Override
