@@ -1,6 +1,9 @@
+package block_chain;
+
+import java.io.Serializable;
 import java.math.BigInteger;
 
-public class Link {
+public class Link implements Serializable {
     private final Link previous;
     private       Link next;
 

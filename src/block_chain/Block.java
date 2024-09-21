@@ -1,9 +1,12 @@
+package block_chain;
+
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 // Object to hold block data
-public class Block {
+public class Block implements Serializable {
     private final BigInteger prevHash;
     private final byte[]     data;
     private final long       timestamp;
